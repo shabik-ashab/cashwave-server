@@ -8,12 +8,7 @@ const PORT = process.env.PORT || 4000;
 const mongoURL = 'mongodb://localhost:27017/cashwavedb'; // Replace 'mydatabase' with your database name
 
 // Connect to MongoDB
-mongoose.connect(mongoURL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-}).then(() => {
+mongoose.connect(mongoURL).then(() => {
   console.log('Connected to MongoDB');
 }).catch(err => {
   console.error('Error connecting to MongoDB:', err.message);
