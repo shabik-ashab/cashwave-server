@@ -1,8 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const rootRouter = require("./routes/index");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+
+app.use("api/v1", rootRouter)
 
 // MongoDB connection URL
 const mongoURL = 'mongodb://localhost:27017/cashwavedb'; // Replace 'mydatabase' with your database name
@@ -10,6 +13,7 @@ const mongoURL = 'mongodb://localhost:27017/cashwavedb'; // Replace 'mydatabase'
 // Connect to MongoDB
 mongoose.connect(mongoURL).then(() => {
   console.log('Connected to MongoDB');
+
 }).catch(err => {
   console.error('Error connecting to MongoDB:', err.message);
 });
