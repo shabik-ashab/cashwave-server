@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 4000;
 app.use(cors())
 app.use(express.json())
 
-app.use("api/v1", rootRouter)
+app.use("/api/v1", rootRouter)
 
 // MongoDB connection URL
 const mongoURL = 'mongodb://localhost:27017/cashwavedb'; // Replace 'mydatabase' with your database name
